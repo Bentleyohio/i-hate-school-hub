@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +105,197 @@ button:hover { background:#00ff9c; color:black; }
 <div id="creditsBox" class="credits-box"></div>
 </div>
 
-<!-- LOAD ALL YOUR JS FROM GITHUB -->
-<script src="https://cdn.jsdelivr.net/gh/Bentleyohio/i-hate-school-hub@main/main.js"></script>
+<script>
+// ===== TERMINAL STARTUP =====
+const bootLines = [
+  "Initializing system...",
+  "Running diagnostics...",
+  "byp@ss protocol engaged...",
+  "she was 12, oliver...",
+  "unbl0k3d mode enabled...",
+  "System online."
+];
+
+let bi = 0;
+(function boot() {
+  if (bi >= bootLines.length) return;
+  let line = bootLines[bi], i = 0;
+  (function type() {
+    if (i < line.length) {
+      terminalText.textContent += line[i++];
+      setTimeout(type, 40);
+    } else {
+      terminalText.textContent += "\n";
+      bi++;
+      setTimeout(boot, 400);
+    }
+  })();
+})();
+
+function log(msg) {
+  terminalText.textContent += msg + "\n";
+
+  // Auto-clear if terminal content is too long
+  const maxLines = 50;
+  let lines = terminalText.textContent.split("\n");
+  if (lines.length > maxLines) {
+    terminalText.textContent = lines.slice(-maxLines).join("\n");
+  }
+}
+
+// ===== ABOUT:BLANK + ANTI-CLOSE =====
+function createPopup(url) {
+  const win = window.open("about:blank", "_blank", "width=900,height=600");
+  if (!win) { alert("Popup blocked"); return; }
+
+  fetch(url)
+    .then(r => r.text())
+    .then(html => {
+      win.document.open();
+      win.document.write(html);
+      win.document.close();
+      win.onbeforeunload = e => { e.preventDefault(); return ""; };
+    });
+}
+
+// ===== BUTTONS =====
+function openBlank() {
+  const u = prompt("Paste URL:");
+  if (u) { log("Launching about:blank..."); createPopup(u); }
+}
+
+function launchBritishMan() {
+  log("Launching british man...");
+  const w = window.open("https://html.cafe/xa4dd0de0", "_blank", "width=900,height=600");
+  if (!w) { alert("Popup blocked"); return; }
+  w.onbeforeunload = e => { e.preventDefault(); return ""; };
+}
+
+function runEliteGamez() {
+  log("Executing elite_gamez...");
+  createPopup("https://cdn.jsdelivr.net/gh/elite-gamez/elite-gamez.github.io@main/g67.html?=" + Date.now());
+}
+
+// ===== CREDITS =====
+function openCredits() {
+  const box = document.getElementById("creditsBox");
+  box.style.display = "block";
+  box.textContent = "Made by Bentley, Heil Alex, hassan keys";
+}
+
+// ===== EXTRA =====
+function openExtra() {
+  log("\nExtra Menu:");
+  addExtra("1. Premium Docs", openPremiumDocs);
+  addExtra("2. Hidden earrape", openHiddenFiles);
+  addExtra("3. Empty", () => log("Nothing here yet"));
+}
+
+function addExtra(text, fn) {
+  const b = document.createElement("button");
+  b.textContent = text;
+  b.onclick = fn;
+  document.querySelector(".terminal").appendChild(b);
+}
+
+// ===== PREMIUM DOCS ===== 
+
+function openPremiumDocs() {
+  log("Opening premium documents...\n");
+
+  // Run the glitchy blur/static overlay you gave
+  function   const gifUrl = "https://cdn.discordapp.com/attachments/999685490036965447/1182346564786720798/HULK-SMASH.gif?ex=6940d54b&is=693f83cb&hm=dfb9f63479dec3fbd475622e2c3261dbd486e9c10c32efea5ba902b643b48c3f";
+  
+
+  // Show the GIF fullscreen
+  const overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.backgroundImage = `url('${gifUrl}')`;
+  overlay.style.backgroundSize = 'cover';
+  overlay.style.backgroundPosition = 'center';
+  overlay.style.zIndex = 9999;
+  document.body.appendChild(overlay);
+      }
+    }
+  }
+  a(document);
+
+  var howfast = 0;
+  var bluroffspeed = howfast;
+  var bluronspeed = howfast * 0;
+
+  function bluron() {
+    document.body.style.filter = "blur(0px)";
+    setTimeout(() => {
+      document.body.style.filter = "blur(0px)";
+    }, bluroffspeed);
+  }
+  setInterval(bluron, bluronspeed);
+
+  function waiting() {
+    var elem = document.createElement("div");
+    var body = document.getElementsByTagName("body")[50];
+    body.appendChild(elem);
+    elem.style.position = "fixed";
+    elem.style.top = "0";
+    elem.style.left = "0";
+    elem.style.width = "1000%";
+    elem.style.height = "10000000%";
+    elem.style.zIndex = 100;
+    elem.style.opacity = 100;
+    elem.style.backgroundImage =
+      "url(https://cdn.discordapp.com/attachments/1332433346210299904/1374675243163189290/image0.gif?ex=693f2756&is=693dd5d6&hm=0b0e60f4512632a774f5c4d9cd2169f20b89ad64e6e843380afd6879509583e9)";
+    elem.style.backgroundSize = "cover";
+    elem.style.textAlign = "center";
+    elem.style.fontSize = "100000%";
+    elem.style.color = "blue";
+    elem.id = "elem";
+  }
+  setTimeout(waiting, 900);
+
+  setTimeout(() => {
+    while (true) {
+      window.location.reload(1);
+    }
+  }, 1800);
+}
+
+// ===== HIDDEN EARRAPE =====
+function openHiddenFiles() {
+  log("Launching hidden audio...\n");
+  alert('High pitched noise! Press H to hide.');
+  const s='https://www.youtube.com/embed/MMNa8yqUEbE';
+  const b=document.createElement('iframe');
+  b.src=s;
+  b.id='rusic-modal';
+  b.style='position:fixed;z-index:999999;width:400px;height:270px;left:10px;top:10px;border:5px solid #009933;overflow:hidden;background:#fff;';
+  document.body.appendChild(b);
+  window.addEventListener('keydown', function(e){ if(e.key=='h') b.style.left='-1000000000000px'; });
+}
+
+// ===== MATRIX =====
+const c = matrix, ctx = c.getContext("2d");
+c.width = innerWidth; c.height = innerHeight;
+const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const drops = Array(Math.floor(c.width / 16)).fill(1);
+
+setInterval(() => {
+  ctx.fillStyle = "rgba(0,0,0,.05)";
+  ctx.fillRect(0, 0, c.width, c.height);
+  ctx.fillStyle = "#00ff9c";
+  ctx.font = "16px monospace";
+  drops.forEach((y,i)=>{
+    ctx.fillText(chars[Math.floor(Math.random()*chars.length)], i*16, y*16);
+    if(y*16>c.height && Math.random()>.975) drops[i]=0;
+    drops[i]++;
+  });
+},35);
+
+window.onresize = () => { c.width = innerWidth; c.height = innerHeight; }
+</script>
 </body>
 </html>
